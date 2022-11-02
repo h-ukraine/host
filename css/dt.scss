@@ -1,0 +1,75 @@
+//обнуление
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    //  color: #18c78d;
+}
+
+//  .unselectable {
+//      -webkit-touch-callout: none; ///* iOS Safari */
+//      -webkit-user-select: none; ///* Chrome/Safari/Opera */
+//      -khtml-user-select: none; //* Konqueror */
+//      -moz-user-select: none; //* Firefox */
+//      -ms-user-select: none; //* Internet Explorer/Edge */
+//      // user-select: none; //* Non-prefixed version, currently not supported by any browser
+//      //
+//      // also can be used in html:
+//      // <p class="unselectable">      Unselectable text.   </p>
+//  }
+//  :root {
+//     // --footer-color: #2cba92;
+//     --slider-value: 30;
+//     --begx-value: 340px;
+//     /* @reasonCode зеленый */
+//     // --palatte-padding-left: 0px
+// }
+html {
+    // background: linear-gradient(to bottom, rgb(226, 227, 228) 0%, rgba(14, 14, 14, 1) 100%);
+    // background-color: rgba(14, 14, 12, 1);
+    // background: linear-gradient(to bottom, rgb(139, 155, 139) 0%, rgba(14, 14, 12, 1) 100%) no-repeat center center fixed;
+    // background-size: $max_body_width contain;
+    //  background-color: rgba(23, 23, 24, 0.904);
+    // background-color: rgba(15, 15, 31, 0.904);
+    // width:      770px;
+    // width: 360px;
+    justify-content: center;
+    // height: 70%;
+    //  background: rgb(54, 68, 54);
+}
+
+// body {
+//     height: 80%;
+// }
+// #dtpk1
+//  #pickers {
+//       display: flex;
+//      justify-content: space-evenly;
+//      align-items: center;
+//      background: crimson;
+//      //  height: 40px;
+//  }
+.dtclass {
+    //  @extend .unselectable;
+    display: inline-block;
+    position: sticky;
+    top: 0px;
+    //  background: rgb(57, 60, 68);
+    background: rgb(99, 103, 116);
+    font-family: 15px Verdana; //, Geneva, Tahoma, sans-serif;
+    // font-size: 13px;
+    color: rgb(237, 247, 181);
+    //  height: 24px;
+    max-width: 43%;
+    min-width: 80px;
+    line-height: 30px;
+    text-align: center;
+    margin: 3px;
+}
+
+#selcontainer {
+    background: rgb(33, 51, 75);
+    height: 30px;
+}

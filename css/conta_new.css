@@ -1,0 +1,384 @@
+my-flexheader {
+  display: flex;
+  justify-content: space-around;
+}
+
+my-page {
+  display: block;
+}
+
+my-subpage {
+  position: relative;
+  border: 1px solid blue;
+  display: block;
+}
+
+.formcontainer, .formcontainer1,
+.formcontainer2,
+.formcontainer3,
+.formcontainer4,
+.formcontainer5,
+.formcontainer6 {
+  display: none;
+  overflow-x: auto;
+  overflow-y: auto;
+  text-align: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+.formcontainer2,
+.formcontainer4 {
+  display: block;
+}
+
+.formcontainer3 {
+  height: calc(98vh - 90px);
+  font-size: 14px;
+}
+.formcontainer3 .f3head {
+  display: flex;
+  color: rgb(70, 226, 55);
+  margin-left: 20px;
+}
+.formcontainer3 .f3head div {
+  text-align: left;
+}
+
+.pagecontainer {
+  display: flex;
+}
+
+.borderonly, .subpage2,
+.subpage3,
+.subpage4,
+.subpage5,
+.subpage6 {
+  display: none;
+  text-align: center;
+  border: 1px solid green;
+}
+
+my-stack {
+  display: grid;
+  background: rgba(255, 0, 0, 0.315);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 60%;
+}
+my-stack div:nth-of-type(1n) {
+  display: inline-block;
+  background: yellow;
+  height: 20px;
+  width: 30px;
+}
+my-stack div:nth-of-type(3n) {
+  display: inline-block;
+  background: rgb(21, 255, 0);
+  height: 20px;
+  width: 30px;
+}
+
+.myselect {
+  width: 60%;
+  height: 40px;
+  font-size: 20px;
+  padding: 2px;
+  border: hidden;
+  background: rgba(39, 48, 66, 0.9921568627);
+  max-width: 400px;
+  color: rgb(97, 170, 97);
+  border: 1px solid grey;
+}
+
+.leftfield {
+  display: none;
+  white-space: nowrap;
+  margin: 10px;
+}
+.leftfield legend {
+  height: 40px;
+}
+.leftfield label {
+  height: 40px;
+}
+
+.khameleonrow {
+  display: none;
+}
+
+.table1, .table0 {
+  background: linear-gradient(to bottom, rgb(68, 72, 83), rgb(66, 66, 82));
+}
+.table1 th, .table0 th {
+  color: var(--color-th);
+}
+
+.table0 td {
+  text-align: center;
+  min-width: 70px;
+  color: var(--color-th);
+}
+
+.vertslidercontainer {
+  display: flex;
+  height: var(--myslider-height);
+  min-width: 30px;
+  margin: 5px;
+  margin-top: 45px;
+  --brandColor: purple;
+  --local-Value: 0px;
+  --delta-Value: var(--myslider-delta);
+  --internHeight: 130px;
+}
+.vertslidercontainer .vertslider {
+  height: var(--myslider-height);
+  min-width: 12px;
+  border: 1px solid rgb(77, 76, 76);
+  border-radius: 6px;
+  margin-left: 8px;
+}
+.vertslidercontainer .filledslider {
+  position: absolute;
+  height: var(--localValue);
+  min-width: 12px;
+  border: 1px solid rgb(77, 76, 76);
+  border-radius: 6px 6px 0px 0px;
+  background: rgba(68, 115, 146, 0.753);
+  margin-left: 8px;
+  z-index: 3;
+}
+.vertslidercontainer .vertslider2 {
+  position: absolute;
+  height: var(--myslider-delta);
+  min-width: 30px;
+  border: 1px solid rgb(77, 76, 76);
+  border-radius: 10px;
+  margin-left: 0px;
+  margin-top: var(--localValue);
+  background: rgba(128, 128, 128, 0.568);
+}
+.vertslidercontainer .vertslider2:active {
+  transform: scale(1.2);
+  background: rgba(101, 185, 241, 0.753);
+}
+
+.simplebutton {
+  font-size: 20px;
+  line-height: 20px;
+  padding: 4px;
+  height: 36px;
+  white-space: nowrap;
+}
+
+.simplebutton:active {
+  transform: scale(0.95) translate(1px, 1px);
+}
+
+.doloni {
+  display: none;
+  color: rgb(13, 13, 15);
+  margin-top: -4%;
+  height: 30px;
+  text-align: right;
+  padding-right: 10px;
+  z-index: 200;
+  justify-self: right;
+  margin-right: 40px;
+}
+
+.conta2 {
+  text-align: right;
+  padding-right: 15px;
+}
+
+:root {
+  --mypage-height: 76vh;
+  --myslider-height: calc( var(--row-amount) *2.36 * var(--font-size));
+  --myslider-delta: 16px;
+  --slider-value: 66;
+  --sli_height: calc( var(--myslider-height) - var(--myslider-delta));
+  --myslider-value: calc( var(--sli_height) *var(--slider-value)/100);
+  --row-amount: 5;
+}
+
+.upper-container {
+  height: 35px;
+}
+
+.band-popup-red, .band-popup-green {
+  display: flex;
+  width: 8px;
+  min-height: 18px;
+  background: rgb(255, 80, 80);
+  margin-right: 5px;
+}
+
+.band-popup-green {
+  background: rgb(65, 184, 10);
+  margin-right: 5px;
+  border-radius: 2px;
+  text-align: center;
+  padding-left: 2px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+@media (min-height: 270px) {
+  :root {
+    --mypage-height: 80vh;
+    --row-amount: 5;
+  }
+}
+@media (min-height: 550px) {
+  :root {
+    --mypage-height: 72vh;
+    --row-amount: 7;
+  }
+  :root .khameleonrow {
+    display: table-row;
+  }
+}
+@media (min-height: 800px) {
+  :root {
+    --mypage-height: 78vh;
+    --row-amount: 7;
+  }
+  :root .khameleonrow {
+    display: table-row;
+  }
+
+  .nav-fluid {
+    margin-top: -6vh;
+  }
+}
+@media (min-width: 576px) {
+  :root {
+    --myslider-height: calc( var(--row-amount) *2.36 * var(--font-size));
+  }
+
+  #leftpanel {
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  :root {
+    --myslider-height: calc( var(--row-amount) *2.36 * var(--font-size));
+  }
+
+  #leftpanel {
+    display: block;
+  }
+}
+@media (min-width: 992px) {
+  :root {
+    --myslider-height: calc( var(--row-amount) *2.36 * var(--font-size));
+  }
+
+  .doloni {
+    display: block;
+  }
+}
+@media (min-width: 1200px) {
+  :root {
+    --myslider-height: calc( var(--row-amount) *2.42 * var(--font-size));
+  }
+}
+.mypage1 {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+  height: var(--mypage-height);
+  width: 95vw;
+}
+.mypage1 div {
+  text-align: left;
+}
+
+.mypage2 {
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+  height: var(--mypage-height);
+  width: 95vw;
+}
+.mypage2 div {
+  text-align: left;
+}
+
+.leftright {
+  display: none;
+  justify-content: center;
+  align-self: center;
+  width: 95vw;
+  margin-top: 10px;
+  padding: 5px;
+}
+.leftright div {
+  margin: 5px;
+  min-width: 80px;
+  background: rgb(32, 32, 42);
+  padding: 5px;
+  text-align: center;
+  border-radius: 4px;
+  background: linear-gradient(to bottom, rgb(0, 0, 0) 1%, rgba(250, 0, 0, 0.4), black 80%);
+}
+.leftright div:active {
+  transform: translate(1px, 1px) scale(0.98);
+  background: linear-gradient(to bottom, rgb(2, 2, 2) 3%, rgba(231, 10, 10, 0.466), rgb(12, 5, 5) 90%);
+}
+
+.container,
+.container-fluid,
+.middle-container,
+.upper-container {
+  display: flex;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+}
+
+.middle-container {
+  background: rgb(20, 220, 177);
+}
+
+.footer-container {
+  margin: 5px;
+  padding-left: 10px;
+  bottom: 5px;
+}
+
+#mainmain {
+  position: relative;
+  border: 1px solid green;
+  height: 78vh;
+}
+
+.maindiv {
+  background: rgba(255, 0, 0, 0.459);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.bbb {
+  opacity: 0.2;
+  border: 1px solid rgb(99, 99, 107);
+  border-radius: 5px;
+  transition: all 0.7s ease-out;
+  -moz-transition: all 0.7s ease-out;
+  -o-transition: all 0.7s ease-out;
+  -webkit-transition: all 0.7s ease-out;
+}
+
+.bbb:hover {
+  transform: translate(-15%, 0%);
+  opacity: 1;
+}
+
+.infobottom {
+  background: blue;
+  bottom: 10px;
+}

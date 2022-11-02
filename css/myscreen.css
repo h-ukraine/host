@@ -1,0 +1,214 @@
+:root {
+  --dark-background: rgb(45, 40, 51);
+  --common-background: rgb(42, 35, 47);
+  --cell-normalbackground: white;
+  --cell-alarm-background: rgb(240, 70, 30);
+  --cell-alarmcolor: black;
+  --cell-normalcolor: black;
+  --vertical-spacing: 50px;
+  --tbl-background1: rgb(49, 46, 46);
+  --cell-commonlineheight: 22px;
+  --cell-smalllineheight: 20px;
+  --cell-biglineheight: 36px;
+  --cell-minwidth: 120px;
+  --cell-width: 55px;
+  --cell-textalign: center;
+  --cell-border: 0px 0px 1px 0px solid black;
+  --cell-headcolor: rgb(0, 220, 220);
+  --cell-datacolor: black;
+  --patriot-background: linear-gradient(rgba(7, 30, 238, 0.794) 20%, rgba(255, 217, 2, 0.52));
+  --ukraine-background: linear-gradient(rgba(7, 30, 238, 0.794) 20%, rgba(167, 145, 21, 1));
+  --andrew-background: rgb(43, 30, 44);
+  --map-height: 96vh;
+  --map-topstart: 100px;
+  --root-fullscreenmode: 0;
+  --paddingtop-button: 5vh;
+  --margintop-instead: 2.5vh;
+}
+
+@media all and (display-mode: fullscreen) {
+  :root {
+    --root-fullscreenmode: 1;
+  }
+}
+@media not all and (display-mode: fullscreen) {
+  :root {
+    --root-fullscreenmode: 0;
+  }
+}
+html,
+body {
+  /* text-align: center; */
+  /* background: rgb(14, 14, 20); */
+  /* background: rgb(255, 255, 255); */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: rgb(194, 188, 188);
+  overflow-y: hidden;
+}
+
+.abcd {
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-right: 3px;
+  line-height: 34px;
+  text-align: center;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 20px;
+  color: rgb(137, 165, 108);
+  white-space: nowrap;
+}
+
+.abcd:hover {
+  cursor: pointer;
+}
+
+.cursorpointer {
+  margin-top: 0px;
+}
+
+.cursorpointer:hover {
+  cursor: pointer;
+}
+
+.help-for, .instead-of-map {
+  display: none;
+  text-align: center;
+  padding-top: var(--paddingtop-button);
+  margin-top: var(--margintop-instead);
+  line-height: 40px;
+  letter-spacing: 0.3em;
+  font-size: 24px;
+  color: rgb(255, 196, 0);
+}
+.help-for div, .instead-of-map div {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.divformap {
+  display: none;
+}
+
+.instead-of-map {
+  display: none;
+  opacity: 0;
+  height: 55vh;
+  width: 90vw;
+  margin-left: 4vw;
+  transition-property: transform, font-size, background-color, opacity;
+  transition-duration: 1.5s;
+}
+.instead-of-map div {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.okbutton {
+  margin-top: 30px;
+  color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+  line-height: 50px;
+  z-index: 90000;
+  cursor: pointer;
+}
+
+.okbutton:hover {
+  background: rgba(81, 109, 80, 0.726);
+}
+
+#map {
+  /* width: 98vw; */
+  /* height: 80vh; */
+  margin-left: 0.5vw;
+  width: 98%;
+  height: calc(var(--map-height) - 20px);
+  border: 1px solid #ccc;
+}
+
+@media only screen and (orientation: landscape) {
+  #map {
+    height: min-heightpx;
+  }
+}
+#progress {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  left: 400px;
+  top: 300px;
+  width: 200px;
+  height: 20px;
+  margin-top: -20px;
+  margin-left: -100px;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  padding: 2px;
+}
+
+#progress-bar {
+  width: 0;
+  height: 100%;
+  background-color: #76A6FC;
+  border-radius: 4px;
+}
+
+.myloader {
+  display: flex;
+  line-height: 22px;
+  margin-left: 0.5vw;
+  margin-right: 1.2vw;
+  justify-content: space-between;
+}
+.myloader .user1 {
+  font-size: 18px;
+  line-height: 22px;
+  color: white;
+  white-space: nowrap;
+}
+
+.username {
+  display: flex;
+  justify-content: right;
+  margin-left: auto;
+  text-align: right;
+  font-size: 18px;
+  color: snow;
+}
+.username span {
+  padding-top: 0px;
+  padding-right: 5px;
+  line-height: 20px;
+  font-size: 17px;
+  font-style: oblique;
+}
+
+.uimg {
+  background: rgba(212, 212, 193, 0.295);
+  background-image: url("../img/account.png");
+  background-repeat: no-repeat;
+  background-size: 99% 99%;
+  background-position: 1px 0px;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  border-radius: 4px 1px;
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+}
+
+@media only screen and (orientation: landscape) and (max-height: 400px) {
+  .myloader,
+#myloader {
+    display: none;
+  }
+}
+@media only screen and (min-height: 350px) {
+  :root {
+    --margintop-instead: 10vh;
+  }
+}

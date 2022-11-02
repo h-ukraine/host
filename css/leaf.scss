@@ -1,0 +1,185 @@
+    //            
+    // html {
+    //     // background: chartreuse;
+    //     background: linear-gradient(to bottom right, navy, blue);
+    // }
+    // body {
+    //     background: linear-gradient(to bottom right, navy, blue);
+    //     // background: blue;
+    //     font-family: 'Consolas';
+    //     font-size: 18px;
+    // }
+    #headcontainer {
+        position: sticky;
+        top: 0px;
+        z-index: 8000;
+        display: flex;
+        flex-direction: row;
+        // width: 80%;
+        // background: blueviolet;
+        // #orionimg {
+        //     background: url(/data/img/orion3.jpg); // no-repeat center center fixed;
+        //     background-size: 100% auto;
+        //     // background: chartreuse;
+        //     // z-index: 100;
+        //     width: 45px;
+        //     height: 26px;
+        //     margin-bottom: 2px;
+        // }
+        #orion {
+            // position: fixed;
+            // background: rgb(44, 58, 30);
+            margin-bottom: 2px;
+            // margin-left: auto;
+            // margin-right: auto;
+            text-align: left;
+            padding-left: 10px;
+            // top: 10px;
+            font-size: 14px;
+            white-space: nowrap;
+            line-height: 12px;
+            color: rgb(44, 236, 70);
+            // z-index: 3800;
+            // max-width: 10%;
+            width: 70px;
+            z-index: 8000;
+        }
+        #grp {
+            font-size: 22px;
+            line-height: 26px;
+            color: rgb(238, 241, 75);
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+            text-align: center;
+            white-space: nowrap;
+            z-index: 8000;
+        }
+    }
+    
+    // #between {
+    //     height: 40px;
+    //     position: sticky;
+    //     top: 26px;
+    //     background: coral;
+    // }
+    // #head2 {
+    //     // position: fixed;
+    //     background: rgb(35, 39, 31);
+    //     position: relative;
+    //     margin-bottom: 2px;
+    //     margin-left: auto;
+    //     margin-right: auto;
+    //     text-align: center;
+    //     top: -15px;
+    //     font-size: 24px;
+    //     line-height: 26px;
+    //     color: rgb(224, 5, 5);
+    //     z-index: -20;
+    // }
+    #mybut {
+        position: fixed;
+        background: linear-gradient( to bottom, rgba(189, 184, 184, 0.74), rgba(18, 19, 18, 0.801));
+        height: 40px;
+        width: 120px;
+        top: 200px;
+        left: 160px;
+        z-index: 5000;
+        opacity: 0.7;
+        color: white;
+        text-align: center;
+        line-height: 40px;
+        border: 2px solid rgb(184, 179, 179);
+        border-radius: 5px;
+    }
+    
+    #secondcont {
+        display: flex;
+        // position: absolute;
+        top: 36px;
+        // height: 500px; //608px;
+        width: 97%;
+        height: calc( 100% - 50px);
+        //
+        .city {
+            font-size: 14px;
+            color: rgb(150, 150, 150);
+            // border: 1px solid gray;
+            margin-top: 15px;
+            margin-bottom: 1px;
+            margin-left: 1px;
+            margin-right: 3px;
+            // height: 40px;
+            line-height: 28px;
+            padding-left: 3px;
+            padding-right: 2px;
+            overflow-x: hidden;
+            // text-align: center;
+            // background: linear-gradient(to bottom, rgb(42, 42, 214), rgba(16, 16, 75, 0.767));
+        }
+        // .city:hover {
+        //     color: rgb(45, 243, 45);
+        // }
+        #kharkiv {
+            color: white;
+        }
+        // display: flex;
+        // // position: absolute;
+        // top: 36px;
+        // // height: 500px; //608px;
+        // width: 97%;
+        // height: calc( 100% - 50px);
+        #leftpan {
+            // background: cadetblue;
+            width: 75px;
+            // height: 500px;
+            // margin-left: -80px;
+        }
+        #lmap {
+            position: relative;
+            // top: 10px;
+            left: 0px;
+            height: 20px;
+            // display: flex;
+            // border: 1px solid rgb(246, 253, 234);
+            // display: flex;
+            // background: orange;
+            // min-height: 100px;
+            // display: inline-block;
+            // display: flex;
+            width: 98%; //90%;
+            // margin-left: -20px;
+            // position: absolute;
+            // margin-left: 100px;
+            // z-index: -5;
+            // margin-top: -10px;
+            // top: -30px;
+            // height: 400px;
+            // height: 10%;
+            // height: 500px;
+            // height: 100%;
+            height: calc( 65vh - 30px);
+            #mapid {
+                // position: absolute;
+                // top: 100px;
+                // left: 200px;
+                // position: absolute;
+                // background: olive;
+                // opacity: 0.95;
+                // min-height: 260px;
+                // top: 0px;
+                // left: 80px;
+                // width: 70%;
+                max-height: 1000px; //608px; //100%;
+                // height: 500px;
+                // height: calc( 65vh - 20px);
+                min-height: 250px;
+                height: 98%;
+                // max-height: 90%;
+                // max-width: 78%;
+                // margin-top: -24px;
+                // z-index: 0;
+                // opacity: 0.77;
+            }
+        }
+    }

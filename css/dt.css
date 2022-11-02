@@ -1,0 +1,31 @@
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  justify-content: center;
+}
+
+.dtclass {
+  display: inline-block;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  background: rgb(99, 103, 116);
+  font-family: 15px Verdana;
+  color: rgb(237, 247, 181);
+  max-width: 43%;
+  min-width: 80px;
+  line-height: 30px;
+  text-align: center;
+  margin: 3px;
+}
+
+#selcontainer {
+  background: rgb(33, 51, 75);
+  height: 30px;
+}

@@ -1,0 +1,108 @@
+/* Grid */
+
+body>main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 17rem);
+    padding: 1rem 0;
+}
+
+article {
+    padding: 0;
+    overflow: hidden;
+}
+
+article div {
+    padding: 1rem;
+}
+
+@media (min-width: 576px) {
+    body>main {
+        padding: 1.25rem 0;
+    }
+    article div {
+        padding: 1.25rem;
+    }
+}
+
+@media (min-width: 768px) {
+    body>main {
+        padding: 1.5rem 0;
+    }
+    article div {
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    body>main {
+        padding: 1.75rem 0;
+    }
+    article div {
+        padding: 1.75rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    body>main {
+        padding: 2rem 0;
+    }
+    article div {
+        padding: 2rem;
+    }
+}
+
+// #ori {
+//     width: 100px;
+// }
+
+/* Hero Image */
+
+// article div :nth-of-type(1) {
+//     background: darkblue;
+// }
+article div:nth-of-type(2n) {
+    display: none;
+    background-color: #374956;
+    background-image: url("https://source.unsplash.com/8jeWeKdygfk/1000x1200");
+    // background-image: url("/data/img/arm.jpg");
+    background-image: url("../img/arm-min.jpg");
+    background-position: center;
+    background-size: cover;
+    //
+    transition: all 0.7s ease-out;
+    -moz-transition: all 0.7s ease-out;
+    -o-transition: all 0.7s ease-out;
+    -webkit-transition: all 0.7s ease-out;
+}
+
+article div:nth-of-type(2n):hover {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
+}
+
+// .image img {
+//     -moz-transition: all 1s ease-out;
+//     -o-transition: all 1s ease-out;
+//     -webkit-transition: all 1s ease-out;
+// }
+// .image img:hover {
+//     -webkit-transform: scale(1.1);
+//     -moz-transform: scale(1.1);
+//     -o-transform: scale(1.1);
+// }
+@media (min-width: 992px) {
+    .grid>div:nth-of-type(2) {
+        display: block;
+    }
+}
+
+
+/* Footer */
+
+body>footer {
+    padding: 1rem 0;
+}

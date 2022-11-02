@@ -1,0 +1,138 @@
+html,
+body {
+  /* text-align: center; */
+  /* background: rgb(14, 14, 20); */
+  /* background: rgb(55, 49, 65); */
+  /* background: linear-gradient(rgb(55, 45, 63), rgb(27, 12, 63)); */
+  background: var(--common-background);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: rgb(194, 188, 188);
+  font: 12px/1.2 "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --backforvidget: var(--back-dark);
+  --back-dark: linear-gradient(to bottom, rgba(68, 68, 68, 0), rgba(145, 145, 145, 0.74));
+  --back-ukr: linear-gradient(to bottom, rgba(39, 38, 38, 0.9), rgba(99, 106, 212, 0.574));
+}
+
+.dashheader {
+  display: flex;
+  /* display: none; */
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  justify-content: space-between;
+  font-size: 20px;
+  color: rgb(245, 231, 171);
+  font-style: oblique;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  /* background: red; */
+}
+.dashheader div {
+  margin: 3px;
+}
+
+.f1 {
+  white-space: nowrap;
+}
+
+.vidgetcontainer {
+  background: var(--backforvidget);
+  border: 1px solid rgb(241, 240, 240);
+  border-radius: 15px 15px 15px 15px;
+  text-align: center;
+  width: 92%;
+}
+.vidgetcontainer p {
+  color: rgb(255, 244, 188);
+  font-style: oblique;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 18px;
+  line-height: 16px;
+  font-size: 16px;
+}
+
+.vidget {
+  text-align: center;
+  display: flex;
+  min-height: 20px;
+  width: 90%;
+}
+.vidget div {
+  text-align: left;
+  margin: 1px;
+  top: 0px;
+  margin-top: 3px;
+  margin-bottom: 2px;
+  min-width: 20%;
+  padding: 0px;
+  font-size: 20px;
+  line-height: 18px;
+  bottom: 2px;
+  padding-top: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.vidget-border {
+  border-bottom: 1px solid grey;
+  -o-border-image: linear-gradient(to right, rgba(41, 41, 47, 0.99), rgb(231, 231, 214));
+     border-image: linear-gradient(to right, rgba(41, 41, 47, 0.99), rgb(231, 231, 214));
+  border-image-slice: 1;
+}
+
+.logotyp, .dashlogotyp {
+  background: rgba(255, 255, 185, 0.76);
+  /* background-image: url("../../img/norma_ok4.png"); */
+  background-image: url("../img/orion.png");
+  background-repeat: no-repeat;
+  background-position: 0px 2px;
+  background-size: 95% 88%;
+  /* border: 1px solid red; */
+  width: 90px;
+  border-radius: 4px 0px 4px 0px;
+}
+
+.dashlogotyp {
+  opacity: 1;
+}
+
+.username {
+  display: flex;
+  justify-content: right;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: right;
+  font-size: 18px;
+  color: snow;
+}
+.username span {
+  padding-top: 3px;
+  padding-right: 5px;
+  line-height: 20px;
+}
+
+.uimg {
+  background: rgba(212, 212, 193, 0.295);
+  background-image: url("../img/account.png");
+  background-repeat: no-repeat;
+  background-size: 99% 99%;
+  background-position: 1px 0px;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  border-radius: 4px 1px;
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+}

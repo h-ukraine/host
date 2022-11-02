@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>Логін • Дозор-С</title>
+    <link rel="icon" href="data:,">
+    <script>
+        console.log('start:  ' + performance.now());
+        let browserSendTime;
+        let browserSend_ms;
+        worker = new Worker("js/wsworker.js");
+        // wrk2 = new Worker("js/wswrk2.js");
+    </script>
+
+    <link rel="stylesheet" href="css/picomin.css">
+    <link rel="stylesheet" href="css/myscreen.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/conta.css">
+
+    <script src="js/minimal-theme-switcher.js" type="text/javascript"></script>
+
+    <!-- <script src="js/setstyle.js" async></script> -->
+
+    <!-- <script src="js/websock.js"></script> -->
+    <script src="js/login.js" async></script>
+
+</head>
+
+<body>
+    <div id=myloader class='myloader'>MY LOADER</div>
+    <!-- Nav -->
+    <nav class="upper-container">
+        <!-- <nav class="container-fluid"> -->
+        <!-- <li><a href="./" class="contrast" onclick="event.preventDefault()"><strong>• Україна •</strong></a></li> -->
+        <ul>
+            <!-- <li><a href="./" class="contrast" onclick="event.preventDefault()"> • Україна • </a></li> -->
+            <li><a href="./" class="contrast" onclick="event.preventDefault()"> • V0.8.2 </a></li>
+        </ul>
+        <ul id=ori style='white-space: nowrap;'>
+            <!-- <li><a href="./" class="contrast" onclick="event.preventDefault()"><strong>Brand</strong></a></li> -->
+            <!-- <li> <a href="https://orion.com.ua" class="secondary">Оріон</a> м.Харків </li> -->
+        </ul>
+
+        <ul id=tm300> </ul>
+
+        <ul>
+            <!-- <li><a href="#" class="contrast" data-theme-switcher="auto">Авто</a></li> -->
+            <!-- <li><a href="#" class="contrast" data-theme-switcher="light">Світла</a></li>
+            <li><a href="#" class="contrast" data-theme-switcher="dark">Темна</a></li> -->
+        </ul>
+    </nav>
+    <!-- <div onclick='myexit(event)'>EXIT</div> -->
+
+
+    <!-- Main -->
+    <main id=mainmain class="container">
+        <!-- <main id=mainmain> -->
+        <!-- <div class="bbb">BBB</div> -->
+        <div id="maindiv" class="maindiv">
+
+            <article class="grid">
+
+                <div>
+                    <hgroup>
+                        <h1>ДОЗОР-С</h1>
+                        <!-- <h2>A minimalist layout for Login pages</h2> -->
+                        <h2>система контролю та відображення стану об'єктів</h2>
+
+                    </hgroup>
+                    <!-- <button class='secondary'>Button</button> -->
+                    <form>
+                        <input type="text" name="login" placeholder="Логін" aria-label="Login" autocomplete="nickname" required>
+                        <input type="password" name="password" placeholder="Пароль" aria-label="Password" autocomplete="current-password" required>
+                        <!-- <fieldset>
+                            <label for="remember">
+                                <input type="checkbox" role="switch" id="remember" name="remember">Запам'ятати
+                                користувача
+                            </label>
+                        </fieldset> -->
+                        <button id='subm' type="submit" class="contrast" onclick="event.preventDefault()">Увійти</button>
+
+                    </form>
+                </div>
+
+                <div></div>
+            </article>
+
+
+            <div class="doloni"> • Все як на долоні... </div>
+            <!-- <div class="conta2"> • Все як на долоні... </div> -->
+
+        </div>
+
+
+
+        <my-page class="mypage1" style='display: none; text-align: center;'>
+
+            <nav class=nav-fluid>
+                <!-- <input type="contrast" name="login" placeholder="Логін" aria-label="Login" autocomplete="nickname" required> -->
+                <!-- <a href="#" role="button">Link</a> -->
+                <div class="simplebutton" onclick="setmode(-111)">
+                    < < </div>
+
+                        <!-- <select class="myselect" onchange="mySelectFunction( 'msel')" id=msel>     -->
+                        <label for="firstsel"></label>
+                        <select id=firstsel class="myselect" onchange="mySelectHandler(this)">
+                            <option>• Аутентифікація </option>
+                            <option>• Головна </option>
+
+                        </select>
+                        <div class="simplebutton" onclick="setmode(111)">
+                            > > </div>
+            </nav>
+
+            <!-- <hr> -->
+            <my-subpage class=subpage1>
+                <!-- <div style="display: flex;"> -->
+                <div class=pagecontainer>
+
+
+                    <form class='formcontainer2'>
+                        <!-- <h6>Аварії у точках вимірювання</h6> -->
+                    </form>
+                </div>
+
+            </my-subpage>
+
+        </my-page>
+    </main>
+    <a id=toskz href="https://orion.com.ua" class="secondary"></a>
+
+    <!-- Footer -->
+    <div id=endfooter class="footer-container">
+        <!-- <small>Built with <a href="https://picocss.com" class="secondary">Pico</a> • <a href="https://github.com/picocss/examples/tree/master/sign-in/" class="secondary">Source code</a></small> -->
+        <!-- <small>  • ТОВ   <a href="https://orion.com.ua" class="secondary">Оріон</a> м.Харків • <a href="https://github.com/picocss/examples/tree/master/sign-in/" class="secondary">Source code</a></small> -->
+        <small> ® • ТОВ <a href="https://orion.com.ua" class="secondary">Оріон</a> м.Харків • </small>
+    </div>
+
+
+
+
+</body>
+
+</html>

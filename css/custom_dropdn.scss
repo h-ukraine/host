@@ -1,0 +1,263 @@
+/* CodePen demo */
+
+html {
+    // background: url(http://cdn.magdeleine.co/wp-content/uploads/2014/05/3jPYgeVCTWCMqjtb7Dqi_IMG_8251-1400x933.jpg) no-repeat center fixed;
+    // background: url(/data/img/sunset.jpg) no-repeat top center;
+    // background-size: 100% auto;
+    background-color: #2a2a2b;
+    background-size: 105vw 110vh;
+}
+
+body {
+    // background: #2a2a2b;
+    color: rgb(17, 81, 92);
+    text-align: center;
+    font-family: Arial, Helvetica;
+    opacity: 0.88;
+}
+
+.big {
+    font-size: 1.2em;
+}
+
+.small {
+    font-size: .7em;
+}
+
+.square {
+    width: .7em;
+    height: .7em;
+    margin: .5em;
+    display: inline-block;
+}
+
+
+/* Custom dropdown */
+
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px;
+    /* demo only */
+}
+
+.custom-dropdown select {
+    background-color: #1abc9c;
+    color: #fff;
+    font-size: inherit;
+    padding: .5em;
+    padding-right: 2.5em;
+    border: 0;
+    margin: 0;
+    border-radius: 3px;
+    text-indent: 0.01px;
+    text-overflow: '';
+    -webkit-appearance: button;
+    /* hide default arrow in chrome OSX */
+}
+
+.custom-dropdown::before,
+.custom-dropdown::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+}
+
+.custom-dropdown::after {
+    /*  Custom dropdown arrow */
+    content: "\25BC";
+    height: 1em;
+    font-size: .625em;
+    line-height: 1;
+    right: 1.2em;
+    top: 50%;
+    margin-top: -.5em;
+}
+
+.custom-dropdown::before {
+    /*  Custom dropdown arrow cover */
+    width: 2em;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.custom-dropdown select[disabled] {
+    color: rgba(0, 0, 0, .3);
+}
+
+.custom-dropdown select[disabled]::after {
+    color: rgba(0, 0, 0, .1);
+}
+
+.custom-dropdown::before {
+    background-color: rgba(0, 0, 0, .15);
+}
+
+.custom-dropdown::after {
+    color: rgba(0, 0, 0, .4);
+}
+
+#regform {
+    // display: none;
+    // position: fixed;
+    // position: absolute;
+    z-index: 100;
+    top: 15%;
+    // left: 27%;
+    // margin-left: 33%;
+    margin-left: auto;
+    margin-right: auto;
+    // width: 50%;
+    max-width: 350px;
+    height: 320px; //280px; //340px;
+    background: rgba( 38, 38, 42, 0.5);
+    border-radius: 10px;
+    text-align: center;
+    color: rgb(141, 231, 129);
+    // color: rgb(0, 255, 128);
+    // margin-top: -100px;
+    // top: -500px;
+    opacity: 0.90;
+    // border: rgb(0, 255, 128) solid 1px;
+    // border: rgb(27, 92, 67) solid 1px;
+    font-size: 18px;
+    #regheader {
+        // background: linear-gradient(to bottom, rgba(144, 236, 23, 0.171), rgb(18, 24, 18));
+        text-align: center;
+        color: rgb(0, 255, 128);
+        height: 30px;
+        line-height: 30px;
+    }
+    #zzz_select {
+        margin-top: -30px;
+        // display: flex;
+        // justify-items: flex-end;
+        // align-content: flex-end;
+        // justify-content: right;
+        margin-left: auto;
+        width: 80px;
+        // background: slateblue;
+        select {
+            background: linear-gradient(to bottom, rgba(144, 236, 23, 0.171), rgb(18, 24, 18));
+            border-color: rgb(36, 53, 32);
+            // background: transparent;
+            background-color: rgb(35, 53, 37);
+            height: 30px;
+            // width: 50px;
+            // width: 100%;
+            width: inherit;
+            font-family: Helvetica;
+            font-size: 18px;
+            color: rgb(248, 236, 236);
+            // color: rgb(12, 151, 60);
+            // margin-right: 0px;
+        }
+    }
+    .rlogin {
+        margin-top: 15px;
+        // background: mediumpurple;
+        border: rgb(78, 82, 100) 1px solid;
+        border-radius: 3px;
+        display: flex;
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 50px;
+        // padding-left: 15px;
+        .clogin {
+            background: rgb(28, 29, 28);
+            padding-left: 10px;
+            text-align: left;
+            width: 60%;
+        }
+        .cedit {
+            // background: linear-gradient(to bottom, rgba(211, 211, 211, 0.445), rgba(0, 0, 0, 0.185));
+            border: rgb(75, 66, 156) solid 1px;
+            border-radius: 2px;
+            height: 28px;
+            width: 100%;
+            margin-left: 50px;
+            white-space: nowrap;
+        }
+    }
+    .backin {
+        // background: linear-gradient(to bottom, rgba(211, 211, 211, 0.445), rgba(0, 0, 0, 0.185));
+        // margin-top: 10px;
+        // background: rgb(44, 45, 51);
+        margin: 15px;
+        width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 28px;
+        font-size: 16px;
+        // border: 1px dimgrey solid;
+        border: rgb(44, 45, 51) 1px solid;
+        border-radius: 3px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .backin:hover {
+        background: rgb(85, 85, 73);
+    }
+    #vhid {
+        font-family: Verdana;
+        font-size: 14px;
+        text-align: left;
+        padding-left: 20px;
+        color: rgb(194, 214, 246);
+        // padding-bottom: 10px;
+    }
+    #regmsg {
+        margin-top: 10px;
+        height: 22px;
+        line-height: 22px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;
+        font-size: 16px;
+    }
+}
+
+#youcannot {
+    display: none;
+    font-size: 22px;
+    line-height: 50px;
+    color: rgb(141, 231, 129);
+}
+
+.mydropdown {
+    background: seashell;
+}
+
+#mainheader {
+    display: flex;
+    margin-top: -10px;
+    // position: relative;
+    // background: yellowgreen;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    select {
+        background: rgb(51, 58, 54);
+        width: 50px;
+        font-family: Helvetica;
+        font-size: 18px;
+        color: silver;
+    }
+    div {
+        height: 20px;
+        right: 0px;
+        background: rgb(82, 68, 67);
+        // width: 100px;
+        margin-left: auto;
+        // margin-bottom: 3px;
+    }
+    // justify-content: right;
+    // align-items: flex-end;
+    // align-content: flex-end;
+    // height: 30px;
+}

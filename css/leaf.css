@@ -1,0 +1,83 @@
+#headcontainer {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 8000;
+  display: flex;
+  flex-direction: row;
+}
+#headcontainer #orion {
+  margin-bottom: 2px;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 14px;
+  white-space: nowrap;
+  line-height: 12px;
+  color: rgb(44, 236, 70);
+  width: 70px;
+  z-index: 8000;
+}
+#headcontainer #grp {
+  font-size: 22px;
+  line-height: 26px;
+  color: rgb(238, 241, 75);
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 8000;
+}
+
+#mybut {
+  position: fixed;
+  background: linear-gradient(to bottom, rgba(189, 184, 184, 0.74), rgba(18, 19, 18, 0.801));
+  height: 40px;
+  width: 120px;
+  top: 200px;
+  left: 160px;
+  z-index: 5000;
+  opacity: 0.7;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  border: 2px solid rgb(184, 179, 179);
+  border-radius: 5px;
+}
+
+#secondcont {
+  display: flex;
+  top: 36px;
+  width: 97%;
+  height: calc(100% - 50px);
+}
+#secondcont .city {
+  font-size: 14px;
+  color: rgb(150, 150, 150);
+  margin-top: 15px;
+  margin-bottom: 1px;
+  margin-left: 1px;
+  margin-right: 3px;
+  line-height: 28px;
+  padding-left: 3px;
+  padding-right: 2px;
+  overflow-x: hidden;
+}
+#secondcont #kharkiv {
+  color: white;
+}
+#secondcont #leftpan {
+  width: 75px;
+}
+#secondcont #lmap {
+  position: relative;
+  left: 0px;
+  height: 20px;
+  width: 98%;
+  height: calc(65vh - 30px);
+}
+#secondcont #lmap #mapid {
+  max-height: 1000px;
+  min-height: 250px;
+  height: 98%;
+}
