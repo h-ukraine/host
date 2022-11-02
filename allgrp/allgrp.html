@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>Дані ГРП</title>
+    <!-- <link rel="icon" href="data:;base64,="> -->
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="../css/_nalasht.css">
+    <link rel="stylesheet" href="../css/_root.css">
+    <link rel="stylesheet" href="./allgrp.css">
+    <script language="javascript" src="../js/lz-str.js"></script>
+    <script src="../mylib/compmin.js" type="text/javascript" defer></script>
+    <script src="../tquery/LINQ.js" type="text/javascript" defer></script>
+    <script src="./fillallgrp.js" type="text/javascript" defer></script>
+    <script src="./allgrp.js" type="text/javascript" defer></script>
+    <!-- <style>
+        @import "../css/nalasht.css";
+    </style> -->
+    <!-- <audio id="myAudio" src="../media/s2_hard.mp3"></audio> -->
+    <audio id="siren" src="../media/sirenpolice.mp3"></audio>
+    <!-- <audio id="siren" src="../media/promalarm.mp3"></audio> -->
+</head>
+
+<body>
+    <div class=dashheader>
+        <!-- <div class=f1>Налаштування</div> -->
+        <div class=f1>V0.8.2</div>
+        <!-- <div class='dashlogotyp'> </div> -->
+        <!-- <div class=f2 style='display:none;'>Тема:
+            <span class=f2span onclick="fliptheme(event)"> Темна</span>
+        </div> -->
+
+
+        <div class='username'>
+            <div class=uimg></div>
+            <span></span>
+        </div>
+
+
+    </div>
+
+    <!-- <p class='header' style='height: 15px;'></p> -->
+    <div class=acontainer>
+        <div id=led class=led></div>
+        <div style=' width: calc(98vw - 70px  - 44px);'>
+            <div class=acontflex>
+                <div id=a1>a1 </div>
+                <!-- <div id=a2 class=a2class onclick='showmode(event)'>ффф </div> -->
+                <select id=select345 class="mysel" style='display: none; border:1px solid black;' onchange="selperiod(this)">
+                    <option class=seloption>• Останні записи </option>
+                    <option class=seloption>• Архів за годину </option>
+                    <option class=seloption>• Архів за добу </option>
+                    <option class=seloption>• За вказаний період</option>
+
+                    <!-- <option class=seloption>• Інтервал </option> -->
+                </select>
+
+            </div>
+
+            <div id=a4 style='display:none;'>a4</div>
+
+        </div>
+        <div class=selmenu2 style='display:block;' onclick='onselmenu(event)'>&#9776; </div>
+    </div>
+
+    <div id=paramcont class=paramcont>
+        <!-- <div id=paramlabel class=paramlabel>Параметри</div> -->
+        <div id=htable class=h-table style='display:none;'></div>
+    </div>
+    <div style='display:flex; margin-left: 1vw;margin-right: 1vw; margin-top: 8px;'>
+        <div id=ftable class=aln1></div>
+        <div id=atable class=aln1></div>
+        <div id=btable class=aln1></div>
+    </div>
+
+    <!-- <div class='indicator'> </div> -->
+    <!-- <div class='indled'> </div> -->
+    <div class=indvalue onclick='ind_handler(event)'> 0 c</div>
+    <div class=speaker onclick='speaker()'> </div>
+    <!-- <input id='itp' type="select" ttttt class=''> -->
+
+    <!-- <select id=firstsel class="myselect" onchange="mySelectHandler(this)">     -->
+    <!-- <select id=itp onchange="mySelectHandler(this)">     -->
+
+    <div id=doubleitp>
+
+        <select id=itp class="mysel" style='border:1px solid black; display:none;' onchange="selhandler(this)">
+            <option class=seloption>• Останній запис </option>
+            <option class=seloption>• 10 останніх записів</option>
+            <option class=seloption>• 50 останніх записів</option>
+            <option class=seloption>• 200 останніх записів</option>
+
+            <option class=seloption>• Параметри вузла</option>
+            <option class=seloption>• Налаштування</option>
+
+        </select>
+
+
+        <select id=itp2 class="mysel" style='border:1px solid black;' onchange="selprofile(this)">
+            <option class=seloption>• Всі входи </option>
+            <option class=seloption>• Профіль1</option>
+            <option class=seloption>• Профіль2</option>
+            <option class=seloption>• Профіль3</option>
+        </select>
+        <!-- <div class=selmenu style='display:none;' onclick='onselmenu(event)'>&#9776; </div> -->
+    </div>
+
+    <div id='anim' class=nalasht>
+        <div class=fheader>
+            <div class=f1>Налаштування</div>
+            <div class=f2>Тема:
+                <span class=f2span onclick="fliptheme(event)"> Темна</span>
+            </div>
+        </div>
+        <!-- <h3 class=hh3> Меню</h3> -->
+        <!-- <div class='leftpan-switch' onclick="leftpanClick(event) "> -->
+        <!-- <b style='padding-left: 40px;'>LeftTab</b> </div> -->
+        <!-- <div class='leftpan-switch' onclick="FsClick(event) "> <b style='padding-left: 40px;'>FullScr</b> </div> -->
+        <!-- <div>hhhhh</div> -->
+        <div class=flexcont>
+            <div>
+                <b class=subheader>Меню:</b>
+                <div id=menucontainer>
+                    <div class='swtab' onclick="openPageUniversal(event)"> Карта</div>
+                    <div class='swtab' onclick="openPageUniversal(event)"> Дані ГРП</div>
+                    <div class='swtab' onclick="openPageUniversal(event)"> Архів</div>
+                    <!-- <div class='swtab' onclick="event.preventDefault()"> Дані ГРП</div> -->
+                </div>
+            </div>
+            <div>
+                <b id=mytabs class=" subheader f2span" onclick="fliptabsnodes(event)">Доступні ГРП:</b>
+                <div id=tabcontainer>
+                    <!-- <div class=' swtab '> дані оновлюються...</div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --------------   nal theme ---------
+        function getelemProp(elem, prop) {
+            var item = document.querySelector(elem);
+            var itemStyles = getComputedStyle(item, null);
+
+            // var bbb = root.style.getPropertyValue(prop);
+            return itemStyles.getPropertyValue(prop);
+        }
+
+        function setelemProp(elem, prop, val) {
+            var item = document.querySelector(elem);
+            item.style.setProperty(prop, val);
+        }
+
+        function fliptheme(e) {
+            e.stopPropagation();
+
+            var name = '.nalasht';
+
+            var dark = getelemProp(name, '--dark');
+            var ukraine = getelemProp(name, '--ukraine');
+            var current = getelemProp(name, '--back');
+            if (current == dark) {
+                setelemProp(name, '--back', ukraine);
+                document.querySelector('.f2span').innerText = 'Україна';
+                localStorage.setItem('naltheme', '--ukraine');
+            } else {
+                setelemProp(name, '--back', dark);
+                document.querySelector('.f2span').innerText = 'Темна';
+                localStorage.setItem('naltheme', '--dark');
+            }
+        }
+
+        function setnaltheme(theme) {
+            var item = document.querySelector('.nalasht');
+            var itemStyles = getComputedStyle(item, null);
+            var color = itemStyles.getPropertyValue(theme);
+
+            var ispan = document.querySelector('.f2span');
+
+            item.style.setProperty('--back', color);
+            if (theme.includes('--ukraine')) {
+                document.querySelector('.f2span').innerText = 'Україна';
+            } else
+                document.querySelector('.f2span').innerText = 'Темна';
+        }
+
+        var naltheme = null;
+        try {
+            naltheme = localStorage.getItem('naltheme');
+
+        } finally {
+            if (naltheme) {
+                setnaltheme(naltheme);
+            }
+        }
+
+
+
+        // --------------   tabs/ nodes ---------
+        function fliptabsnodes(e) {
+            e.stopPropagation();
+            return;
+            var div = e.currentTarget;
+
+            if (div.innerText.includes('Активні вкладки')) {
+                div.innerText = "Доступні ГРП:";
+                localStorage.setItem('tabsnodes', 'nodes');
+            } else {
+                div.innerText = 'Активні вкладки:';
+                localStorage.setItem('tabsnodes', 'tabs');
+            }
+        }
+
+        function settabsnodes(text) {
+            var item = document.querySelector('#mytabs');
+            // var itemStyles = getComputedStyle(item, null);
+            // var color = itemStyles.getPropertyValue(text);
+
+            // item.innerText = text;
+            item.innerText = text == 'tabs' ? 'Активні вкладки:' : "Доступні ГРП:";
+        }
+        // var ispan = document.querySelector('.f2span');
+
+        // item.style.setProperty('tabsnodes', color);
+
+        var tabsnodes = null;
+        try {
+            tabsnodes = localStorage.getItem('tabsnodes');
+
+        } finally {
+            if (tabsnodes) {
+                settabsnodes(tabsnodes);
+            }
+        }
+
+        // -------------------  высота экрана 
+        // setInterval(() => {
+        //     if (document.documentElement) {
+        //         //clientHeight - высота окна доступная, соотв/ @media min-height
+        //         var h2 = document.documentElement.clientHeight; //scrolleight
+        //         var h = document.body.offsetHeight;
+        //         var dv = document.querySelector('.f1');
+        //         dv.innerText = h + " " + h2;
+        //     }
+        // }, 300);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>АРХІВ</title>
+    <!-- <link rel="icon" href="data:;base64,="> -->
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="../css/_nalasht.css">
+    <link rel="stylesheet" href="../css/_root.css">
+    <link rel="stylesheet" href="./archive.css">
+    <!-- <script src="../mylib/compmin.js" type="text/javascript" defer></script> -->
+    <script src="../tquery/LINQ.js" type="text/javascript" defer></script>
+    <script src="../mylib/grpcolumn_param.js" type="text/javascript" defer></script>
+    <script src="../mylib/openpageuni.js" type="text/javascript" defer></script>
+    <script src="../mylib/arctable.js" type="text/javascript" defer></script>
+
+    <script src="./archive.js" type="text/javascript" defer></script>
+    <script src="./archmenu.js" type="text/javascript" defer></script>
+
+
+    <!-- <style>
+        @import "../css/nalasht.css";
+    </style> -->
+
+    <link rel="stylesheet" href="../dtsel-master/dtsel.css" />
+    <link rel="stylesheet" href="../css/dt.css" />
+    <script src="../dtsel-master/dtsel.js"></script>
+</head>
+
+
+<body>
+    <p class='header' style='height: 20px;'>hhh</p>
+    <div class=acontainer>
+        <!-- <div id=lmenu class='led'> Меню</div> -->
+        <div id=lmenu class=lmenu style='display:block;'>&#9776; </div>
+        <div style='width: calc(98vw - 70px  - 50px);'>
+            <div class=acontflex>
+                <!-- <div id=a1>з'єднання...</div> -->
+                <div id=a1 onclick='myblur(event)'>дані оновлюються</div>
+
+
+                <!-- <div style='display:flex;'>
+                    <div onclick='set_pages(0)' style='margin-left:0px;'>Pg-</div>
+                    <div onclick='set_pages(1)' style='margin-left:25px;'>Pg+</div>
+                    <div id=pgno style='margin-left:25px;'></div>
+                </div>
+                <div style='display:flex;'>
+                    <div onclick='set_currpage("minus")' style='margin-left:0px;'>curr-</div>
+                    <div onclick='set_currpage("plus")' style='margin-left:15px;'>curr+</div>
+                    <div id=currno style='margin-left:15px;'>jj</div>
+                </div> -->
+
+
+                <!-- <div id=a2 class=a2class onclick='showmode(event)'>ффф </div> -->
+                <select id=select345 class='mysel' style='display: none; border:1px solid black;'
+                    onchange="selperiod(this)">
+                    <option class=seloption>• Останні записи </option>
+                    <option class=seloption>• Архів за годину </option>
+                    <option class=seloption>• Архів за добу </option>
+                    <option class=seloption>• За вказаний період</option>
+                    <!-- <option class=seloption>• Інтервал </option> -->
+                </select>
+
+            </div>
+
+            <div id=a4 style='display:none;'>a4</div>
+
+        </div>
+        <div class=selmenu2 style='display:block;' onclick='onselmenu(event)'> </div>
+    </div>
+
+    <!-- <div id=paramcont class=paramcont> -->
+    <!-- <div id=paramlabel class=paramlabel>Параметри</div> -->
+    <!-- <div id=htable class=h-table style='display:none;'></div> -->
+    <!-- </div> -->
+
+    <div id=tablecontainer style='display:flex; margin-left: 1.2vw;margin-right: 1.3vw; margin-top: 8px; '>
+        <!-- <div id=ftable class=ftab></div>
+        <div id=btable class=btab>
+            <div class=intab></div>
+            <div class=intab></div>
+            <div class=intab></div>
+            <div class=intab></div>
+            <div class=intab></div>
+            <div class=intab></div>
+        </div> -->
+        <div id=ftable></div>
+        <div id=btable></div>
+    </div>
+
+
+    <div class="cbutcontainer">
+        <div id='cfirst' class=sbutton onclick='set_exactpage(event)'> 1 </div>
+        <div id='_cpost' class=dbutton> ... </div>
+        <div id='cminus' class=nbutton onclick='set_currpage("minus")'>-</div>
+        <div id='ccurrent' class=nbutton onclick='set_exactpage(event)'>3</div>
+        <div id='cplus' class=nbutton onclick='set_currpage("plus")'>+</div>
+        <div id='_prelast' class=dbutton> ... </div>
+        <div id='clast' class=nbutton onclick='set_exactpage(event)'> 50 </div>
+    </div>
+    <div class='cbtext'>Дані відсутні</div>
+
+    <div id=redl class='redline'></div>
+
+
+    <!-- <input id='itp' type="select" ttttt class=''> -->
+
+    <!-- <select id=firstsel class="myselect" onchange="mySelectHandler(this)">     -->
+    <!-- <select id=itp onchange="mySelectHandler(this)">     -->
+
+    <div id=doubleitp>
+
+        <select id=itp class="mysel" style='border:1px solid black; display:none;' onchange="selhandler(this)">
+            <option class=seloption>• Останній запис </option>
+            <option class=seloption>• 10 останніх записів</option>
+            <option class=seloption>• 50 останніх записів</option>
+            <option class=seloption>• 200 останніх записів</option>
+
+            <option class=seloption>• Параметри вузла</option>
+            <option class=seloption>• Налаштування</option>
+
+        </select>
+
+
+        <select id=itp2 class="mysel" style='border:1px solid black;' onchange="selprofile(this)">
+            <option class=seloption>• Всі входи </option>
+            <option class=seloption>• Профіль1</option>
+            <option class=seloption>• Профіль2</option>
+            <option class=seloption>• Профіль3</option>
+        </select>
+        <!-- <div class=selmenu style='display:none;' onclick='onselmenu(event)'>&#9776; </div> -->
+    </div>
+
+    <!-- <div id=arch> </div> -->
+
+
+
+    <div id='anim' class=nalasht>
+        <div class=fheader>
+            <div class=f1>Налаштування</div>
+            <div class=f2>Тема:
+                <span class=f2span onclick="fliptheme(event)"> Темна</span>
+            </div>
+        </div>
+        <!-- <h3 class=hh3> Меню</h3> -->
+        <!-- <div class='leftpan-switch' onclick="leftpanClick(event) "> -->
+        <!-- <b style='padding-left: 40px;'>LeftTab</b> </div> -->
+        <!-- <div class='leftpan-switch' onclick="FsClick(event) "> <b style='padding-left: 40px;'>FullScr</b> </div> -->
+        <!-- <div>hhhhh</div> -->
+        <div class=flexcont>
+            <div>
+                <b class=subheader>Меню:</b>
+                <div id=menucontainer>
+                    <div class='swtab' onclick="openPageUniversal(event)"> Карта</div>
+                    <div class='swtab' onclick="openPageUniversal(event)"> Дані ГРП</div>
+                    <div class='swtab' onclick="openPageUniversal(event)"> Архів</div>
+                    <!-- <div class='swtab' onclick="event.preventDefault()"> Дані ГРП</div> -->
+                </div>
+            </div>
+            <div>
+                <b id=mytabs class=" subheader f2span" onclick="fliptabsnodes(event)">Доступні ГРП:</b>
+                <div id=tabcontainer>
+                    <!-- <div class=' swtab '> дані оновлюються...</div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class=selform>
+
+        <div class=aboveflex>
+            <input id=dtpk1 name="dateTimePicker" class="dtclass" />
+            <!-- <div class="aselector"> hhh</div> -->
+
+            <select id=aselector class="mysel2" style='border:1px solid black;' onchange="selprofile(this)">
+                <!-- <option class=seloption>↼ ⇁</option> -->
+                <!-- <option class=seloption>⟻ • ⟼</option> -->
+                <!-- ⟻•⟼     ⇋-->
+                <option class=seloption>інтервал</option>
+                <option class=seloption>12 годин</option>
+                <option class=seloption>доба</option>
+                <option class=seloption>минула</option>
+                <option class=seloption>позаминула</option>
+                <option class=seloption>тиждень</option>
+                <option class=seloption>місяць</option>
+                <option class=seloption>3 місяці</option>
+            </select>
+
+            <input id=dtpk2 name="dateTimePicker2" class="dtclass" />
+
+        </div>
+
+
+
+        <div class=formflex>
+            <div class="formflexm1">
+                <span style='padding-left:6px; width:45%;'>Вузли</span>
+                <span style='padding-left:2px; width:15%; '>Записи</span>
+                <span style='padding-left:0px; width:35%; '>Параметри</span>
+            </div>
+
+            <div class="formflex0">
+
+
+                <div class="d0">
+                    <!-- <div class="formflex1"> -->
+
+
+
+
+                    <div class=formflex2>
+                        <div class=dc1> </div>
+                    </div>
+                    <div class=d1> </div>
+                </div>
+
+                <!-- <div class=formflex3> -->
+                <!-- <div style='border:1px solid white;'>hhh</div> -->
+                <div class=d3> </div>
+                <!-- </div> -->
+            </div>
+
+
+            <div class=amntinfo>
+                <!-- <div></div> -->
+                <p id=spn style='padding-left:10px;'>0</p>
+            </div>
+            <div class=errinfo> </div>
+
+        </div>
+
+
+        <div class=subflex>
+
+            <div id=radiobuttons style='display:flex; justify-content: space-evenly; '>
+                <div class=okbut1 onclick='radiobut(event)'>Всі</div>
+                <div class=okbut1 onclick='radiobut(event)'>Авар.</div>
+                <div class=okbut1 onclick='radiobut(event)'>Норм.</div>
+                <div class=okbut1 onclick='radiobut(event)'>Зв`яз.</div>
+            </div>
+            <!-- <div class=amntinfo> Записів: </div> -->
+
+            <div class='subflex2'>
+                <div class=getamount onclick='askamount(event)'>Фільтр.</div>
+                <div class=okbut onclick='offselmenu(event)'>Таблиця</div>
+                <div class=okbut onclick='graph(event)'>Графік</div>
+                <div class=csvbut onclick='onCSV(event)'>CSV</div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        // --------------   nal theme ---------
+        function getelemProp(elem, prop) {
+            var item = document.querySelector(elem);
+            var itemStyles = getComputedStyle(item, null);
+
+            // var bbb = root.style.getPropertyValue(prop);
+            return itemStyles.getPropertyValue(prop);
+        }
+
+        function setelemProp(elem, prop, val) {
+            var item = document.querySelector(elem);
+            item.style.setProperty(prop, val);
+        }
+
+        function fliptheme(e) {
+            e.stopPropagation();
+
+            var name = '.nalasht';
+
+            var dark = getelemProp(name, '--dark');
+            var ukraine = getelemProp(name, '--ukraine');
+            var current = getelemProp(name, '--back');
+            if (current == dark) {
+                setelemProp(name, '--back', ukraine);
+                document.querySelector('.f2span').innerText = 'Україна';
+                localStorage.setItem('naltheme', '--ukraine');
+            } else {
+                setelemProp(name, '--back', dark);
+                document.querySelector('.f2span').innerText = 'Темна';
+                localStorage.setItem('naltheme', '--dark');
+            }
+        }
+
+        function setnaltheme(theme) {
+            var item = document.querySelector('.nalasht');
+            var itemStyles = getComputedStyle(item, null);
+            var color = itemStyles.getPropertyValue(theme);
+
+            var ispan = document.querySelector('.f2span');
+
+            item.style.setProperty('--back', color);
+            if (theme.includes('--ukraine')) {
+                document.querySelector('.f2span').innerText = 'Україна';
+            } else
+                document.querySelector('.f2span').innerText = 'Темна';
+        }
+
+        var naltheme = null;
+        try {
+            naltheme = localStorage.getItem('naltheme');
+
+        } finally {
+            if (naltheme) {
+                setnaltheme(naltheme);
+            }
+        }
+
+
+
+        // --------------   tabs/ nodes ---------
+        function fliptabsnodes(e) {
+            e.stopPropagation();
+            return;
+            var div = e.currentTarget;
+
+            if (div.innerText.includes('Активні вкладки')) {
+                div.innerText = "Доступні ГРП:";
+                localStorage.setItem('tabsnodes', 'nodes');
+            } else {
+                div.innerText = 'Активні вкладки:';
+                localStorage.setItem('tabsnodes', 'tabs');
+            }
+        }
+
+        function settabsnodes(text) {
+            var item = document.querySelector('#mytabs');
+            // var itemStyles = getComputedStyle(item, null);
+            // var color = itemStyles.getPropertyValue(text);
+
+            // item.innerText = text;
+            item.innerText = text == 'tabs' ? 'Активні вкладки:' : "Доступні ГРП:";
+        }
+        // var ispan = document.querySelector('.f2span');
+
+        // item.style.setProperty('tabsnodes', color);
+
+        var tabsnodes = null;
+        try {
+            tabsnodes = localStorage.getItem('tabsnodes');
+
+        } finally {
+            if (tabsnodes) {
+                settabsnodes(tabsnodes);
+            }
+        }
+
+        // -------------------  высота экрана 
+        // setInterval(() => {
+        //     if (document.documentElement) {
+        //         //clientHeight - высота окна доступная, соотв/ @media min-height
+        //         var h2 = document.documentElement.clientHeight; //scrolleight
+        //         var h = document.body.offsetHeight;
+        //         var dv = document.querySelector('.f1');
+        //         dv.innerText = h + " " + h2;
+        //     }
+        // }, 300);
+
+
+        // instance = new dtsel.DTS('input[name="dateTimePicker"]');
+        // instance = new dtsel.DTS('input[name="dateTimePicker"]');
+        // instance = new dtsel.DTS('input[name="dateTimePicker"]', {
+        //     dateFormat: "yyyy-mm-dd",
+        //     timeFormat: "HH:MM:SS"
+        // });
+
+        let instance = new dtsel.DTS('input[name="dateTimePicker"]', {
+            // dateFormat: "yyyy-mm-dd",
+            showTime: true
+
+        });
+        let instance2 = new dtsel.DTS('input[name="dateTimePicker2"]', {
+            showTime: true,
+            // showDate: false,
+            direction: 'TOP'
+        });
+
+        setInterval(() => {
+            if (instance.dtbox) {
+                var mmm = instance.dtbox.month;
+                var yyy = instance.dtbox.year;
+                var ddd = instance.dtbox.day;
+                var hr = instance.dtbox.hours;
+                var min = instance.dtbox.minutes;
+                var sec = instance.dtbox.seconds;
+
+
+                var ttt = instance.dtbox.time;
+                var bbb = 0;
+            }
+        }, 4000);
+
+        instance.onselectstart = () => {
+            return false;
+        } //  //make unselectable!!
+    </script>
+
+</body>
+
+</html>
